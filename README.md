@@ -1,4 +1,4 @@
-# IoMBian Display Handler
+# IoMBian System Info Provider
 
 This service publishes the following system information through a ZeroMQ socket (port 5557 by default):
 
