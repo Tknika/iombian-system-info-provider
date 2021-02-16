@@ -1,0 +1,14 @@
+[Unit]
+Description=IoMBian System Info Provider
+
+[Service]
+Type=simple
+User=root
+Restart=always
+RestartSec=5
+
+WorkingDirectory=/opt/iombian-system-info-provider
+ExecStart=/opt/iombian-system-info-provider/venv/bin/python /opt/iombian-system-info-provider/main.py
+
+[Install]
+WantedBy=multi-user.target
