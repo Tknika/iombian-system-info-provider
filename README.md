@@ -11,25 +11,29 @@ This service publishes the following system information through a ZeroMQ socket 
 
 ## Installation
 
+- Define project name in an environment variable:
+
+> ```PROJECT_NAME=iombian-system-info-provider```
+
 - Clone the repo into a temp folder:
 
-> ```git clone https://github.com/Tknika/iombian-system-info-provider.git /tmp/iombian-system-info-provider && cd /tmp/iombian-system-info-provider```
+> ```git clone https://github.com/Tknika/${PROJECT_NAME}.git /tmp/${PROJECT_NAME} && cd /tmp/${PROJECT_NAME}```
 
 - Create the installation folder and move the appropiate files (edit the user):
 
-> ```sudo mkdir /opt/iombian-system-info-provider```
+> ```sudo mkdir /opt/${PROJECT_NAME}```
 
-> ```sudo cp requirements.txt /opt/iombian-system-info-provider```
+> ```sudo cp requirements.txt /opt/${PROJECT_NAME}```
 
-> ```sudo cp -r src/* /opt/iombian-system-info-provider```
+> ```sudo cp -r src/* /opt/${PROJECT_NAME}```
 
-> ```sudo cp systemd/iombian-system-info-provider.service /etc/systemd/system/```
+> ```sudo cp systemd/${PROJECT_NAME}.service /etc/systemd/system/```
 
-> ```sudo chown -R iompi:iompi /opt/iombian-system-info-provider```
+> ```sudo chown -R iompi:iompi /opt/${PROJECT_NAME}```
 
 - Create the virtual environment and install the dependencies:
 
-> ```cd /opt/iombian-system-info-provider```
+> ```cd /opt/${PROJECT_NAME}```
 
 > ```python3 -m venv venv```
 
@@ -41,7 +45,8 @@ This service publishes the following system information through a ZeroMQ socket 
 
 - Start the script
 
-> ```sudo systemctl enable iombian-system-info-provider.service && sudo systemctl start iombian-system-info-provider.service```
+> ```sudo systemctl enable ${PROJECT_NAME}.service && sudo systemctl start ${PROJECT_NAME}.service```
+
 
 ## Author
 
